@@ -1,0 +1,6 @@
+env: 'dev'
+debug: True
+encryption_key_team: '1234567890'
+encryption_key_visitor: '4321432143214321'
+aws_access_key: ''
+aws_secret_key: ''
