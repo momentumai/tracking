@@ -37,9 +37,9 @@ def get_campaign(context):
     if not context.get('is_share', False):
         return 0
 
-    campaign = context.get('campaign', {})
+    campaign = context.get('custom_params', {})
 
-    return int(campaign.get('id', 0))
+    return int(campaign.get('campaign', 0))
 
 
 def get_campaign_token(context):
@@ -62,8 +62,7 @@ def parse(context):
         'cat3': str(context.get('META_cat3', 'NONE')),
         'is_share': bool(context.get('is_share', False)),
         'traffic_type': int(get_traffic_type(context)),
-        'campaign': int(get_campaign(context)),
-        'token': str(get_campaign_token(context))
+        'campaign': int(get_campaign(context))
     }
 
     result.update(get_session_data(context.get('session_new_on', {})))
