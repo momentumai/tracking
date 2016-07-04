@@ -1,10 +1,11 @@
 from lib.util.crypto import encrypt
 
 
-def parse(visitor_future, config, context):
+def parse(visitor_future, cat_future, config, context):
     result = dict()
 
     visitor = visitor_future.get_result()
+    cat_future.get_result()
 
     visitor_id = visitor.id()
     result['visitor_cookie'] = encrypt(visitor_id, config['encryption_key_visitor'])

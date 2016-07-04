@@ -55,6 +55,12 @@ def parse_meta(context):
     result['META_cat2'] = result['META_cat2'] if result.get('META_cat2', '') != '' else 'NONE'
     result['META_cat3'] = result['META_cat3'] if result.get('META_cat3', '') != '' else 'NONE'
 
+    result['category_map'] = '||'.join([
+        result['META_cat1'],
+        result['META_cat2'],
+        result['META_cat3']
+    ])
+
     return result
 
 
