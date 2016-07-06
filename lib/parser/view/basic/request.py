@@ -51,9 +51,9 @@ def parse_meta(context):
         else:
             result['META_' + key] = quote(str(value.encode('utf8')))
 
-    result['META_cat1'] = result['META_cat1'] if result.get('META_cat1', '') != '' else 'NONE'
-    result['META_cat2'] = result['META_cat2'] if result.get('META_cat2', '') != '' else 'NONE'
-    result['META_cat3'] = result['META_cat3'] if result.get('META_cat3', '') != '' else 'NONE'
+    result['META_cat1'] = result['META_cat1'][:64] if result.get('META_cat1', '') != '' else 'NONE'
+    result['META_cat2'] = result['META_cat2'][:64] if result.get('META_cat2', '') != '' else 'NONE'
+    result['META_cat3'] = result['META_cat3'][:64] if result.get('META_cat3', '') != '' else 'NONE'
 
     result['category_map'] = '||'.join([
         result['META_cat1'],

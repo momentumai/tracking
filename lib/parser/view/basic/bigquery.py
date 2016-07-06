@@ -57,9 +57,9 @@ def parse(context):
         'team_id': int(context['team_id']),
         'content_id': str(context['content']['content_id']),
         'referrer': str(get_referrer(context))[:255],
-        'cat1': str(context.get('META_cat1', 'NONE'))[:64],
-        'cat2': str(context.get('META_cat2', 'NONE'))[:64],
-        'cat3': str(context.get('META_cat3', 'NONE'))[:64],
+        'cat1': str(context.get('META_cat1', 'NONE')),
+        'cat2': str(context.get('META_cat2', 'NONE')),
+        'cat3': str(context.get('META_cat3', 'NONE')),
         'is_share': bool(context.get('is_share', False)),
         'traffic_type': int(get_traffic_type(context)),
         'campaign': int(get_campaign(context))
