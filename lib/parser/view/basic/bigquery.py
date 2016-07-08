@@ -62,7 +62,8 @@ def parse(context):
         'cat3': str(context.get('META_cat3', 'NONE')),
         'is_share': bool(context.get('is_share', False)),
         'traffic_type': int(get_traffic_type(context)),
-        'campaign': int(get_campaign(context))
+        'campaign': int(get_campaign(context)),
+        'category_map': str(context.get('category_map'))
     }
 
     result.update(get_session_data(context.get('session_new_on', {})))
