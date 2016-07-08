@@ -23,6 +23,7 @@ def stream_row(data, config):
                 'cat2': data['cat2'],
                 'cat3': data['cat3'],
                 'content_id': data['content_id'],
+                'category_map': data.get('category_map', ''),
                 'referrer': data['referrer'],
                 'is_share': data['is_share'],
                 'traffic_type': data['traffic_type'],
