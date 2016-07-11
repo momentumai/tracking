@@ -25,7 +25,7 @@ def put(environ, start_response):
             local.update(request.parse(config, params))
             namespace_manager.set_namespace(str(local['team_id']))
 
-            content = get_by_url(local['page'])
+            content = get_by_url(local['page'], local)
             local['content'] = content.to_dict()
 
             visitor_obj, visitor_future = visitor.parse(local)
