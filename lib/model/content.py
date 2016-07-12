@@ -9,3 +9,15 @@ def get_by_url(url, contex):
         is_blacklisted=False,
         category_map=contex['category_map']
     )
+
+
+def update_content(obj, contex):
+    update = False
+    if str(obj.category_map) != str(contex['category_map']):
+        update = True
+        obj.category_map = contex['category_map']
+
+    if update:
+        return obj.put_async()
+
+    return None

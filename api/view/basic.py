@@ -2,8 +2,9 @@ from config import get_config
 from lib.error.validation import ValidationError
 from lib.helper.request.params import get_post_params_from_json
 from lib.helper.response.xhr import start_api_response
-from lib.parser.view.basic import request, visitor, response, kinesis, bigquery
-from lib.model.content import get_by_url
+from lib.parser.view.basic import \
+    request, visitor, response, kinesis, bigquery, future
+from lib.model.content import get_by_url, update_content
 from lib.model.category import get_or_insert_async
 from google.appengine.api import namespace_manager
 from time import time
@@ -26,6 +27,7 @@ def put(environ, start_response):
             namespace_manager.set_namespace(str(local['team_id']))
 
             content = get_by_url(local['page'], local)
+            content_future = update_content(content, local)
             local['content'] = content.to_dict()
 
             visitor_obj, visitor_future = visitor.parse(local)
@@ -44,8 +46,12 @@ def put(environ, start_response):
                         local['bigquery'],
                         config
                     )
-
-            ret = response.parse(visitor_future, cat_future, config, local)
+            visitor_obj = future.get_results(
+                visitor_future,
+                cat_future,
+                content_future
+            )
+            ret = response.parse(visitor_obj, config, local)
 
     except ValidationError as err:
         ret['error'] = str(err)
