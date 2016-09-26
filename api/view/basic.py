@@ -38,9 +38,6 @@ def put(environ, start_response):
             local['bigquery'] = bigquery.parse(local)
 
             if not content.is_blacklisted:
-                if config['env'] != 'dev' and not local.get('is_in_house', False):
-                    push_record(local['kinesis'], str(local['page']), config)
-
                 if not local.get('is_in_house', False):
                     local['bigquery_response'] = bigquery_resource.stream_row(
                         local['bigquery'],

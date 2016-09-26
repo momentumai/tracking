@@ -1,0 +1,102 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "time",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "team_id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cat1",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cat2",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cat3",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "url",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "referrer",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_share",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "traffic_type",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "campaign",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "title",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "image",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "new_content",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "new_cat0",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "new_cat1",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "new_cat2",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "new_cat3",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "content_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "category_map",
+        "type": "STRING"
+    }
+]
