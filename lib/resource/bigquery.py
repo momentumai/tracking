@@ -27,6 +27,7 @@ def stream_row(data, config):
                 'is_share': data['is_share'],
                 'traffic_type': data['traffic_type'],
                 'campaign': data['campaign'],
+                'experiment': data['experiment'],
                 'new_content': data.get('new_content', False),
                 'new_cat0': data.get('new_cat0', False),
                 'new_cat1': data.get('new_cat1', False),

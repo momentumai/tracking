@@ -52,7 +52,7 @@
     {
         "mode": "NULLABLE",
         "name": "campaign",
-        "type": "STRING"
+        "type": "INTEGER"
     },
     {
         "mode": "NULLABLE",
@@ -97,6 +97,11 @@
     {
         "mode": "NULLABLE",
         "name": "category_map",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "experiment",
         "type": "STRING"
     }
 ]
