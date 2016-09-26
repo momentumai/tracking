@@ -67,7 +67,7 @@
     {
         "mode": "NULLABLE",
         "name": "new_content",
-        "type": "STRING"
+        "type": "BOOLEAN"
     },
     {
         "mode": "NULLABLE",
